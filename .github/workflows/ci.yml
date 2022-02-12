@@ -1,0 +1,44 @@
+name: CI
+on:
+  push:
+    branches:
+      - '**'
+    paths-ignore:
+      - 'README.md'
+jobs:
+  test-py:
+    name: Run Python tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        run: |
+          pip install black flake8
+      - name: Check formatting with Black
+        run: |
+          black --check --diff .
+      - name: Lint with Flake8
+        run: |
+          flake8 . --statistics
+  test-js:
+    name: Run JavaScript tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+      - name: Install dependencies
+        run: |
+          yarn add --dev --exact eslint prettier
+      - name: Check formatting with Prettier
+        run: |
+          yarn prettier --check "**/*.js"
+      - name: Lint with ESLint
+        run: |
+          yarn eslint "**/*.js"

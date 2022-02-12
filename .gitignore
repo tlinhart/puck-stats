@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/
+
+.build
+build
+web_modules
+node_modules
+
+lambdas/*/package/
+*-lambda.zip
+
+.env
+.vscode/
+*.DS_Store
