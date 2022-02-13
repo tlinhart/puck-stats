@@ -1,8 +1,8 @@
 # Puck Stats
 
-[![CI workflow status](https://github.com/tlinhart/puck-stats/actions/workflows/ci.yml/badge)](https://github.com/tlinhart/puck-stats/actions)
+[![CI workflow status](https://github.com/tlinhart/puck-stats/actions/workflows/ci.yml/badge.svg)](https://github.com/tlinhart/puck-stats/actions)
 
-Application for collecting, management and analysis of hockey game statistics.
+Application for recording and analysis of hockey game statistics.
 
 ## TODO
 
